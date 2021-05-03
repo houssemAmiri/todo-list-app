@@ -8,3 +8,7 @@
   color: blue;
   text-decoration: underline;
 }
+
+.click {
+  cursor: pointer;
+}

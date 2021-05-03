@@ -4,14 +4,19 @@ import { useDispatch } from "react-redux";
 import "../../style/App.css";
 interface Props {
   todoElem: ITodo;
-  removeTodo: (article: ITodo) => void;
+  removeTodo: (todo: ITodo) => void;
+  completeTodo: (todo: ITodo) => void;
 }
-const TaskItem: React.FC<Props> = ({ todoElem, removeTodo }) => {
+const TaskItem: React.FC<Props> = ({ todoElem, removeTodo, completeTodo }) => {
   const dispatch: Dispatch<any> = useDispatch();
 
   const deleteTodo = React.useCallback(
     (todo: ITodo) => dispatch(removeTodo(todo)),
     [dispatch, removeTodo]
+  );
+  const updateTodo = React.useCallback(
+    (todo: ITodo) => dispatch(completeTodo(todo)),
+    [dispatch, completeTodo]
   );
   return (
     <li className="list-group-item d-flex justify-content-between align-items-center">
@@ -25,7 +30,8 @@ const TaskItem: React.FC<Props> = ({ todoElem, removeTodo }) => {
       <span
         className={`badge ${
           todoElem.isCompleted ? "badge-success" : "badge-danger"
-        } badge-pill`}
+        } badge-pill click`}
+        onClick={() => updateTodo(todoElem)}
       >
         {todoElem.isCompleted ? `Complète` : `Non Complete`}
       </span>

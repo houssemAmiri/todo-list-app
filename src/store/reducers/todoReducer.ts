@@ -46,6 +46,19 @@ const reducer = (
       todos: updatedTodos,
     };
   }
+  if (action.type === COMPLETE_TODO) {
+    let existedItem: ITodo | undefined = state.todos.find(
+      (item) => action.todo.id === item.id
+    );
+    if (existedItem) {
+      existedItem.isCompleted = !existedItem.isCompleted;
+    }
+
+    console.log(state.todos);
+    return {
+      ...state,
+    };
+  }
 
   return state;
 };
