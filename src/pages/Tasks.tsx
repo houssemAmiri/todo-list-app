@@ -15,7 +15,6 @@ const Tasks: React.FC = () => {
   const saveTodo = React.useCallback((todo: ITodo) => dispatch(addTodo(todo)), [
     dispatch,
   ]);
-  console.log(todos);
   return (
     <div className="container">
       <TaskList todoList={todos} />

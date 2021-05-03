@@ -1,6 +1,8 @@
 import React from "react";
-
+import TaskItem from "./TaskItem";
 import { ListTasksText } from "../../constants/text";
+import { removeTodo } from "../../store/actions/todoActions";
+
 interface Props {
   todoList: ITodo[];
 }
@@ -8,22 +10,15 @@ const TaskList: React.FC<Props> = ({ todoList }) => {
   return (
     <>
       <h2>{ListTasksText.TITLE}</h2>
-      <ul className="list-group">
-        {todoList.map((todo) => (
-          <li className="list-group-item d-flex justify-content-between align-items-center">
-            <h6>
-              <b>{todo.name}:</b> {todo.description}
-            </h6>
-            <span
-              className={`badge ${
-                todo.isCompleted ? "badge-success" : "badge-danger"
-              } badge-pill`}
-            >
-              {todo.isCompleted ? `Complète` : `Non Complete`}
-            </span>
-          </li>
-        ))}
-      </ul>
+      {todoList.length > 0 ? (
+        <ul className="list-group">
+          {todoList.map((todoElem, index) => (
+            <TaskItem todoElem={todoElem} removeTodo={removeTodo} key={index} />
+          ))}
+        </ul>
+      ) : (
+        <h3>Liste vide ajouter des éléments</h3>
+      )}
     </>
   );
 };

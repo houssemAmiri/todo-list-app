@@ -16,7 +16,6 @@ const AddTask: React.FC<Props> = ({ saveTodo }) => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<Inputs>();
   const onSubmit = (data: Inputs) => {
