@@ -7,4 +7,12 @@ const LoginFormText = {
     VERIFY: "Please verify your email/password", 
     REQUIRED: "Required Field"   
 }
-export {LoginFormText}
+const ListTasksText = {
+    TITLE: "Listes des taches",
+}
+const AddTaskText = {
+    TITLE: "Créer une nouvelle tache",
+    NAME_TASK_LABEL: "Nom de la tache",
+    DESCRIPTION_TASK_LABEL: "Description de la tache en une ligne"
+}
+export {LoginFormText, ListTasksText,AddTaskText}
