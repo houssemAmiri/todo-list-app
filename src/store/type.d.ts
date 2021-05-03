@@ -1,5 +1,5 @@
 interface ITodo {
-  id: number;
+  id: string;
   name: string;
   description: string;
   isCompleted: boolean;

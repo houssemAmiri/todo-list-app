@@ -19,7 +19,7 @@ const Tasks: React.FC = () => {
   return (
     <div className="container">
       <TaskList todoList={todos} />
-      <AddTask />
+      <AddTask saveTodo={saveTodo} />
     </div>
   );
 };

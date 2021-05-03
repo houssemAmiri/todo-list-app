@@ -7,16 +7,16 @@ import {
 const initialState: TodoState = {
   todos: [
     {
-      id: 1,
+      id: "dsfsfsfs145154fdsfs84f",
       name: "Envoyer un mail ",
       description: "à toute l'equipe",
       isCompleted: true,
     },
     {
-      id: 2,
+      id: "dsfsfdsfds784c65dsdscdsc",
       name: "Faire l'exercice",
       description: "React only",
-      isCompleted: true,
+      isCompleted: false,
     },
   ],
 };
@@ -27,7 +27,7 @@ const reducer = (
 ): TodoState => {
   if (action.type === ADD_TODO) {
     const newTodo: ITodo = {
-      id: Math.random(),
+      id: action.todo.id,
       name: action.todo.name,
       description: action.todo.description,
       isCompleted: action.todo.isCompleted,
