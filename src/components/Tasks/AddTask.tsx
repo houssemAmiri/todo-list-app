@@ -13,7 +13,7 @@ const AddTask: React.FC = () => {
             <input type="text" className="form-control" />
           </div>
           <div className="col-auto">
-            <label>{AddTaskText.NAME_TASK_LABEL}</label>
+            <label>{AddTaskText.DESCRIPTION_TASK_LABEL}</label>
             <input type="text" className="form-control" />
           </div>
 
