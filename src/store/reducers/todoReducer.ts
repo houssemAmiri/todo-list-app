@@ -47,17 +47,13 @@ const reducer = (
     };
   }
   if (action.type === COMPLETE_TODO) {
-    let existedItem: ITodo | undefined = state.todos.find(
-      (item) => action.todo.id === item.id
-    );
-    if (existedItem) {
-      existedItem.isCompleted = !existedItem.isCompleted;
-    }
+    const newTodos: ITodo[] = [...state.todos];
 
-    console.log(state.todos);
-    return {
-      ...state,
-    };
+    let todo1 = newTodos.filter((t) => t.id === action.todo.id)[0];
+
+    todo1.isCompleted = !todo1.isCompleted;
+
+    return { ...state, todos: newTodos };
   }
 
   return state;
