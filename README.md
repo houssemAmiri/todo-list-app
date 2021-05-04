@@ -18,7 +18,7 @@ or you can run the project by
 
 ### `npm install && npm start`
 
-The authentification account : \
+The authentification account :\
 
 ### email: test@test.com
 
