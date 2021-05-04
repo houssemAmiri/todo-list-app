@@ -39,7 +39,7 @@ const reducer = (
   }
   if (action.type === DELETE_TODO) {
     const updatedTodos: ITodo[] = state.todos.filter(
-      (todo) => todo.name !== action.todo.name
+      (todo) => todo.id !== action.todo.id
     );
     return {
       ...state,

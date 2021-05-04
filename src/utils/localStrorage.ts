@@ -1,18 +1,20 @@
-export const loadState = async () => {
+export const loadState = () => {
   try {
     const serializedState = localStorage.getItem("state");
     if (serializedState === null) {
       return undefined;
     }
-
     return JSON.parse(serializedState);
   } catch (err) {
     return undefined;
   }
 };
+// localStorage.js
 export const saveState = (state: TodoState) => {
   try {
     const serializedState = JSON.stringify(state);
     localStorage.setItem("state", serializedState);
-  } catch (err) {}
+  } catch {
+    // ignore write errors
+  }
 };

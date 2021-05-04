@@ -10,7 +10,7 @@ const TaskList: React.FC<Props> = ({ todoList }) => {
   return (
     <>
       <h2>{ListTasksText.TITLE}</h2>
-      {todoList.length > 0 ? (
+      {todoList && todoList.length > 0 ? (
         <ul className="list-group">
           {todoList.map((todoElem, index) => (
             <TaskItem
