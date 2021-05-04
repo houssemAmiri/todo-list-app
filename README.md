@@ -1,7 +1,7 @@
 # ToDo App React js
 
 This project was developed by Houssem Amiri\
-Technologies used: React, Typescript, redux , react-router-dom, react-hook-form
+Technologies used: React, Typescript, redux , react-router-dom, react-hook-form, docker
 
 ## To run the project
 

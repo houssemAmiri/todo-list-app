@@ -1,6 +1,7 @@
 import React from "react";
 import { Dispatch } from "redux";
 import { useDispatch } from "react-redux";
+import { TaskItemText } from "../../constants/text";
 import "../../style/App.css";
 interface Props {
   todoElem: ITodo;
@@ -23,7 +24,7 @@ const TaskItem: React.FC<Props> = ({ todoElem, removeTodo, completeTodo }) => {
       <h6>
         <b>{todoElem.name}:</b> {todoElem.description} -{" "}
         <span className="span" onClick={() => deleteTodo(todoElem)}>
-          Supprimer
+          {TaskItemText.DELETE}
         </span>
       </h6>
 
@@ -33,7 +34,9 @@ const TaskItem: React.FC<Props> = ({ todoElem, removeTodo, completeTodo }) => {
         } badge-pill click`}
         onClick={() => updateTodo(todoElem)}
       >
-        {todoElem.isCompleted ? `Complète` : `Non Complete`}
+        {todoElem.isCompleted
+          ? TaskItemText.COMPLETE
+          : TaskItemText.NOT_COMPLETE}
       </span>
     </li>
   );

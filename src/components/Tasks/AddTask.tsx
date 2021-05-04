@@ -54,7 +54,7 @@ const AddTask: React.FC<Props> = ({ saveTodo }) => {
 
           <div className="col-auto">
             <button type="submit" className="btn btn-primary mt-4">
-              Ajouter une tache
+              {AddTaskText.BUTTON}
             </button>
           </div>
         </div>

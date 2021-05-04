@@ -1,6 +1,7 @@
 import React from "react";
 import "../style/App.css";
 import { useHistory } from "react-router-dom";
+import { HeaderText } from "../constants/text";
 interface Props {
   logout: () => void;
   isAuthentificated: boolean;
@@ -10,7 +11,7 @@ const Header: React.FC<Props> = ({ logout, isAuthentificated }) => {
 
   return (
     <nav className="navbar navbar-light bg-light">
-      <span className="navbar-brand mb-0 h1">Todo App</span>
+      <span className="navbar-brand mb-0 h1">{HeaderText.TITLE}</span>
       {isAuthentificated && (
         <span
           className="span"
@@ -20,7 +21,7 @@ const Header: React.FC<Props> = ({ logout, isAuthentificated }) => {
             logout();
           }}
         >
-          Deconnexion
+          {HeaderText.LOGOUT}
         </span>
       )}
     </nav>

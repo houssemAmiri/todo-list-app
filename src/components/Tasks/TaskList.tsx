@@ -22,7 +22,7 @@ const TaskList: React.FC<Props> = ({ todoList }) => {
           ))}
         </ul>
       ) : (
-        <h3>Liste vide ajouter des éléments</h3>
+        <h3>{ListTasksText.EMPTY_LIST}</h3>
       )}
     </>
   );
