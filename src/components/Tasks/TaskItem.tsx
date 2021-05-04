@@ -32,7 +32,11 @@ const TaskItem: React.FC<Props> = ({ todoElem, removeTodo, completeTodo }) => {
         className={`badge ${
           todoElem.isCompleted ? "badge-success" : "badge-danger"
         } badge-pill click`}
-        onClick={() => updateTodo(todoElem)}
+        onClick={(e) => {
+          e.preventDefault();
+          console.log(todoElem);
+          updateTodo(todoElem);
+        }}
       >
         {todoElem.isCompleted
           ? TaskItemText.COMPLETE

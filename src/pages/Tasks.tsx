@@ -11,6 +11,7 @@ const Tasks: React.FC = () => {
     (state: TodoState) => state.todos,
     shallowEqual
   );
+
   const dispatch: Dispatch<any> = useDispatch();
   const saveTodo = React.useCallback((todo: ITodo) => dispatch(addTodo(todo)), [
     dispatch,

@@ -1,4 +1,5 @@
-import { createStore, Store } from "redux";
+import { createStore, Store, applyMiddleware } from "redux";
+import logger from "redux-logger";
 
 import todoReducer from "./reducers/todoReducer";
 import throttle from "lodash/throttle";
@@ -8,7 +9,7 @@ import { loadState, saveState } from "../utils/localStrorage";
 const persistedState = loadState();
 const store: Store<TodoState, TodoAction> & {
   dispatch: DispatchType;
-} = createStore(todoReducer, persistedState);
+} = createStore(todoReducer, persistedState, applyMiddleware(logger));
 /*
 store.subscribe(
   throttle(() => {

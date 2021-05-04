@@ -49,9 +49,9 @@ const reducer = (
   if (action.type === COMPLETE_TODO) {
     const newTodos: ITodo[] = [...state.todos];
 
-    let todo1 = newTodos.filter((t) => t.id === action.todo.id)[0];
+    let elemIndex = newTodos.findIndex((t) => t.id === action.todo.id);
 
-    todo1.isCompleted = !todo1.isCompleted;
+    newTodos[elemIndex].isCompleted = !action.todo.isCompleted;
 
     return { ...state, todos: newTodos };
   }

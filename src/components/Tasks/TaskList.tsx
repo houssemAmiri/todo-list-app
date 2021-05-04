@@ -12,12 +12,12 @@ const TaskList: React.FC<Props> = ({ todoList }) => {
       <h2>{ListTasksText.TITLE}</h2>
       {todoList && todoList.length > 0 ? (
         <ul className="list-group">
-          {todoList.map((todoElem, index) => (
+          {todoList.map((todoElem) => (
             <TaskItem
+              key={todoElem.id}
               todoElem={todoElem}
               removeTodo={removeTodo}
               completeTodo={completeTodo}
-              key={index}
             />
           ))}
         </ul>
