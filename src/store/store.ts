@@ -1,8 +1,6 @@
-import { createStore, Store, applyMiddleware } from "redux";
-import { loadState, saveState } from "../utils/localStrorage";
+import { createStore, Store } from "redux";
 
 import todoReducer from "./reducers/todoReducer";
-const persistedState = loadState();
 
 const store: Store<TodoState, TodoAction> & {
   dispatch: DispatchType;

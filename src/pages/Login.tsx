@@ -11,7 +11,10 @@ type Inputs = {
   email: string;
   password: string;
 };
-const Login: React.FC = () => {
+interface Props {
+  login: () => void;
+}
+const Login: React.FC<Props> = ({ login }) => {
   const [errorShow, setErrorShow] = useState<boolean>(false);
 
   const {
@@ -26,6 +29,7 @@ const Login: React.FC = () => {
     console.log(data);
     if (data.email === user.email && data.password === user.password) {
       setErrorShow(false);
+      login();
       history.push("/tasks");
     } else {
       setErrorShow(true);
